@@ -13,7 +13,7 @@ exports.run = async (client, message, args) => {
         let opponent = message.mentions.users.first()
         if (!opponent) return message.reply("Oynamak istediğin kişiyi etiketle...")
   
-  if (opponent.bot) return message.reply('Botlar ile düello yapamazsın dostum.');
+  if (opponent.bot) return message.reply('Botlar ile düello yapamazsın. Seni ezer geçerler');
   if (opponent.id === message.author.id) return message.reply('Kendin ile düello atamazsın dostum.');
                 if (this.fighting.has(message.channel.id)) return message.reply('Kanal sayısına göre savaş yapabilirsin.');
                 this.fighting.add(message.channel.id);
@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
                                 const verification = await verify(message.channel, opponent);
                                 if (!verification) {
                                         this.fighting.delete(message.channel.id);
-                                        return message.channel.send(`Düello kabul edilmedi...`);
+                                        return message.channel.send(`Korktu ve düello kabul edilmedi...`);
                                 }
                         }
                         let userHP = 500;

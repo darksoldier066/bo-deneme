@@ -1,15 +1,6 @@
-Bot Altyapı Projesine Hoşgeldin!
 =================
- Bu Dosya Tamamen `Emirhan Saraç'a Aittir`. Bot Altyapısını Sizlerin Kullanması İçin Verdik Gerekli Modüller Yüklüdür..!
+Bu Dosya Tamamen `Mehmet Cem Taşkın'a Aittir`.
 
-[Resmi Discord Sunucumuz](https://discord.gg/NG8qEX3)
+[Discord Sunucumuz](https://discord.gg/nzbXxT)
 
-[Resmi Youtube Kanalımız](https://www.youtube.com/channel/UCVRhrcoG6FOvHGKehYtvKHg?view_as=subscriber)
-
-[Resmi İnstagram Hesabımız](https://www.instagram.com/emirhan_sarac54/)
-
-
--------------------
-
-`İyi Kodlamalar ay iyi düzeltmeler`
-
+---

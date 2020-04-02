@@ -7,7 +7,7 @@ exports.run = (client, message, args) => {
   
 
     
-  if (!message.guild.members.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.reply('Gerekli izin yok')
+  if (!message.guild.members.get(client.user.id).hasPermission("BAN_MEMBERS")) return message.reply('Gerekli iznin yok')
   //if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply(`Bu komutu kullanabilmek için **Üyeleri Yasakla** iznine sahip olmalısın!`);
   
   let user = message.mentions.users.first();
@@ -15,8 +15,8 @@ exports.run = (client, message, args) => {
   //let modLog = JSON.parse(fs.readFileSync("./jsonlar/mLog.json", "utf8"));
   if (db.has(`mLog_${message.guild.id}`) === false) return message.reply('Mod log kanalı ayarlanmamış');
   let modlog = message.guild.channels.get(db.fetch(`mLog_${message.guild.id}`).replace("<#", "").replace(">", ""));
-  if (message.mentions.users.size < 1) return message.reply('Lütfen banlamak istediğiniz üyeyi etiketleyin');
-  if (reason.length < 1) return message.reply('Lütfen sebep giriniz');
+  if (message.mentions.users.size < 1) return message.reply('Banlamak istediğin kişiyi etiketle de banlayak');
+  if (reason.length < 1) return message.reply('Peki NeDeN?');
   if (user.id === message.author.id) return message.reply('Kendinimi banlayacaksın?');
   /*if (user.highestRole.calculatedPosition > message.member.highestRole.calculatedPosition - 1) {
 			return message.reply(`Bu kişinin senin rollerinden/rolünden daha yüksek rolleri/rolü var.`);
@@ -27,7 +27,7 @@ exports.run = (client, message, args) => {
   .setColor("RANDOM")
   .addField('İşlem', 'Ban')
   .addField('Banlanan üye', `${user.tag} (${user.id})`)
-  .addField('Banlayan yetkili', `${message.author.username}#${message.author.discriminator}`)
+  .addField('Banlayan kişi', `${message.author.username}#${message.author.discriminator}`)
   .addField('Ban sebebi', "```" + reason + "```")
   modlog.send(embed);
   

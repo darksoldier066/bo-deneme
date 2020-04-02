@@ -7,15 +7,15 @@ exports.run = async (client, message, args) => {
   this.fighting = new Set();
   
 	let opponent = message.mentions.users.first()
-	if (!opponent) return message.reply("Oynamak istediğin kişiyi etiketlemelisin!")
+	if (!opponent) return message.reply("Oynamak istediğin kişiyi etiketle de kimle oynayacağını bilek")
   
   if (opponent.bot) return message.reply('Botlar ile oynayamazsın!');
-  if (opponent.id === message.author.id) return message.reply('Kendin ile düello atamazsın!');
-		if (this.fighting.has(message.channel.id)) return message.reply('Kanal başına sadece bir düello meydana gelebilir.');
+  if (opponent.id === message.author.id) return message.reply('Kendin ile düello nası yapcan allahını seversen');
+		if (this.fighting.has(message.channel.id)) return message.reply('Bir kanalda sadece bir düello olabilir.');
 		this.fighting.add(message.channel.id);
 		try {
 			if (!opponent.bot) {
-                await message.channel.send(`${opponent}, düello isteği geldi. Düello'yu kabul ediyor musun? (\`evet\` veya \`hayır\` olarak cevap veriniz.)`);
+                await message.channel.send(`${opponent}, düello isteği geldi. Bu varlığı alt edebilir misin? (\`evet\` veya \`hayır\` olarak cevap veriniz.)`);
 				const verification = await verify(message.channel, opponent);
 				if (!verification) {
 					this.fighting.delete(message.channel.id);
